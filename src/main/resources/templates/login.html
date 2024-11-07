@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+        crossorigin="anonymous">
+</head>
+<body style="background: #d5f3f9">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background: #00b4d8">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" th:href="@{/public/register}" style="font-family: 'Georgia'; font-size: larger">Register</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br /><br />
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+
+      <div th:if="${param.error}" style="width: 500px; background: #ade8f4">
+        <div class="alert alert-danger" style="font-family: 'Georgia'">Invalid Email or Password</div>
+      </div>
+      <div th:if="${param.logout}" style="width: 500px; background: #ade8f4">
+        <div class="alert alert-success" style="font-family: 'Georgia'"> You have been logged out.</div>
+      </div>
+
+      <div class="card" style="background: #90e0ef; width: 500px">
+        <div class="card-header">
+          <h2 class="text-center" style="font-family: 'Georgia'">Login</h2>
+        </div>
+        <div class="card-body">
+          <form
+                  method="post"
+                  role="form"
+                  th:action="@{/login}"
+                  class="form-horizontal"
+          >
+            <div class="form-group mb-3">
+              <label class="control-label" style="font-family: 'Georgia'"> Username</label>
+              <input
+                      type="text"
+                      id="username"
+                      name="username"
+                      class="form-control"
+                      placeholder="Enter username"
+              />
+            </div>
+
+            <div class="form-group mb-3">
+              <label class="control-label" style="font-family: 'Georgia'"> Password</label>
+              <input
+                      type="password"
+                      id="password"
+                      name="password"
+                      class="form-control"
+                      placeholder="Enter password"
+              />
+            </div>
+            <div class="form-group mb-3" th:align="center">
+              <button type="submit" class="btn btn-primary" style="background: #00b4d8; font-family: Georgia">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

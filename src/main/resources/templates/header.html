@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container" th:fragment="header">
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background: #00b4d8">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" style="font-family: 'Georgia'" th:href="@{/reader/showAllBooks}">Books</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" style="font-family: 'Georgia'" th:href="@{/book-owner/addBook}">Add book</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" style="font-family: 'Georgia'" th:href="@{/reader/showBorrowedBooks}">Borrowed books</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" style="font-family: 'Georgia'" th:href="@{/book-owner/showOwnBooks}">Own books</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" style="font-family: 'Georgia'" th:href="@{/admin/showAllUsers}">Users</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav" style="margin-left: auto;">
+        <li class="nav-item active">
+          <a class="nav-link" style="font-family: 'Georgia'" th:href="@{/logout}">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+</body>
+</html>

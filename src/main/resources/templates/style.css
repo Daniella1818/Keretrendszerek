@@ -1,0 +1,7 @@
+.custom-div {
+    max-width: 1200px;
+}
+.custom-col {
+    width: 100%;
+    margin: 0 auto;
+}
